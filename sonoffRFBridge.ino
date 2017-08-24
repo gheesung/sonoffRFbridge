@@ -25,7 +25,7 @@
  */
 #include <RCSwitch.h>
 #include <NeoSWSerial.h>
-#define INPUT_BUFFER_SIZE      250          // Max number of characters in (serial) command buffer
+#define INPUT_BUFFER_SIZE      90          // Max number of characters in (serial) command buffer
 #define rxPin 4
 #define txPin 5
 #define LED_BUILTIN1 7
@@ -80,7 +80,7 @@ void espArduinoBridge(){
 
       // prevent buffer overflow. 
       // when ESP boot, it sends the log thru' UART
-      if (byteRecv>= 90) { 
+      if (byteRecv>= INPUT_BUFFER_SIZE) { 
         byteRecv = 0; 
         break; 
       }
