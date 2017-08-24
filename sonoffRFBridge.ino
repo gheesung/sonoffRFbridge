@@ -146,7 +146,8 @@ void processCommand(){
 void processLearnMode(){
     Serial.println("Command --> Start Learning");
     delay(1000);
-    recvRFSwitch();
+    //recvRFSwitch();
+    
     int i = 0;
     while (recvData == 0){
       recvRFSwitch();
